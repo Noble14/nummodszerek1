@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace NumModszerek
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
+
+            button1.Text = resource.menuMachineNumbers;
+            button2.Text = resource.menuGauss;
         }
 
     }
