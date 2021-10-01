@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Rational
+namespace NumModszerek.Gauss
 {
     public class Rational
     {
@@ -20,6 +20,12 @@ namespace Rational
         {
             this.denominator = 1;
             this.nominator = a;
+        }
+
+        public Rational()
+        {
+            denominator = 1;
+            nominator = 0;
         }
 
         public static Rational operator +(Rational a, Rational b)
