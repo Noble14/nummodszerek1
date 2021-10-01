@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NumModszerek.Gauss;
 using System.Windows.Forms;
 
 namespace NumModszerek
@@ -18,7 +19,14 @@ namespace NumModszerek
 
             button1.Text = resource.menuMachineNumbers;
             button2.Text = resource.menuGauss;
+
+            button2.MouseDown += startGaussForm;
         }
 
+        private void startGaussForm(object sender, EventArgs e)
+        {
+            FormGauss f = new FormGauss();
+            f.Show();
+        }
     }
 }

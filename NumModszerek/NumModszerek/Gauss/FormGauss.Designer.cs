@@ -30,9 +30,10 @@ namespace NumModszerek.Gauss
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelDimension = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonGenerate = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelDimension = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,22 +49,6 @@ namespace NumModszerek.Gauss
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // labelDimension
-            // 
-            this.labelDimension.AutoSize = true;
-            this.labelDimension.Location = new System.Drawing.Point(6, 19);
-            this.labelDimension.Name = "labelDimension";
-            this.labelDimension.Size = new System.Drawing.Size(38, 15);
-            this.labelDimension.TabIndex = 0;
-            this.labelDimension.Text = "label1";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(50, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(76, 23);
-            this.textBox1.TabIndex = 1;
-            // 
             // buttonGenerate
             // 
             this.buttonGenerate.Location = new System.Drawing.Point(147, 16);
@@ -73,11 +58,35 @@ namespace NumModszerek.Gauss
             this.buttonGenerate.Text = "button1";
             this.buttonGenerate.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(50, 16);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(76, 23);
+            this.textBox1.TabIndex = 1;
+            // 
+            // labelDimension
+            // 
+            this.labelDimension.AutoSize = true;
+            this.labelDimension.Location = new System.Drawing.Point(6, 19);
+            this.labelDimension.Name = "labelDimension";
+            this.labelDimension.Size = new System.Drawing.Size(38, 15);
+            this.labelDimension.TabIndex = 0;
+            this.labelDimension.Text = "label1";
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(12, 65);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(310, 287);
+            this.panel1.TabIndex = 1;
+            // 
             // FormGauss
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormGauss";
             this.Text = "FormGauss";
@@ -93,5 +102,6 @@ namespace NumModszerek.Gauss
         private System.Windows.Forms.Button buttonGenerate;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label labelDimension;
+        private System.Windows.Forms.Panel panel1;
     }
 }
