@@ -30,6 +30,7 @@ namespace NumModszerek.Gauss
             {
                 n = 3;
             }
+            GaussModell model = new GaussModell(n);
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
@@ -39,7 +40,7 @@ namespace NumModszerek.Gauss
                     b.Height = b.Width;
                     b.Left = i * b.Width;
                     b.Top = j * b.Height;
-                    
+                    b.Text = model.matrix[i,j].ToString();
                     panel1.Controls.Add(b);
                 }
             }

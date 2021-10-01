@@ -9,9 +9,11 @@ namespace NumModszerek.Gauss
         public Rational[,] matrix { get; private set; }
         public Rational[] bVector { get; private set; }
         public Rational[] resultVector { get; private set; }
+        private int n;
         private Random vel = new Random();
         public GaussModell(int n)
         {
+            this.n = n;
             matrix = new Rational[n, n];
             bVector = new Rational[n];
             resultVector = new Rational[n];
@@ -19,13 +21,16 @@ namespace NumModszerek.Gauss
         }
         private void generateRandomMatrix()
         {
-            foreach (var item in resultVector)
+            for (int i = 0; i < resultVector.Length; i++)
             {
-                item.nominator = vel.Next(15);
+                resultVector[i] = new Rational(vel.Next(15));
             }
-            foreach (var item in matrix)
+            for (int i = 0; i < n; i++)
             {
-                item.nominator = vel.Next(10);
+                for (int j = 0; j < n; j++)
+                {
+                    matrix[i,j] = new Rational(vel.Next(10));
+                }
             }
 
             for (int i = 0; i < bVector.Length; i++)
@@ -35,7 +40,7 @@ namespace NumModszerek.Gauss
                 {
                     s = s + matrix[i, j].nominator * resultVector[j].nominator;
                 }
-                bVector[i].nominator = s;
+                bVector[i] = new Rational(s);
             }
         }
     }
