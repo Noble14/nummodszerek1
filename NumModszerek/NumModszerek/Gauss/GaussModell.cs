@@ -18,6 +18,7 @@ namespace NumModszerek.Gauss
             bVector = new Rational[n];
             resultVector = new Rational[n];
             generateRandomMatrix();
+            
         }
         private void generateRandomMatrix()
         {
@@ -41,6 +42,17 @@ namespace NumModszerek.Gauss
                     s = s + matrix[i, j].nominator * resultVector[j].nominator;
                 }
                 bVector[i] = new Rational(s);
+            }
+        }
+        public void solve()
+        {
+            
+        }
+        private void rowSubstraction(int a, int b, Rational gaussHanyados)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                matrix[a, i] = matrix[a, i] - matrix[b, i] * gaussHanyados;
             }
         }
     }
