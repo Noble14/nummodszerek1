@@ -60,7 +60,7 @@ namespace NumModszerek.Gauss
         {
             if (b.nominator == 0)
             {
-                Exception e = new Exception("Baj van");
+                Exception e = new Exception("Cannot divide with null");
                 throw e;
             }
             return new Rational(a.nominator * b.denominator, a.denominator * b.nominator);

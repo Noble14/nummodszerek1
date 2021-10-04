@@ -24,13 +24,13 @@ namespace NumModszerek.Gauss
         {
             for (int i = 0; i < resultVector.Length; i++)
             {
-                resultVector[i] = new Rational(vel.Next(15));
+                resultVector[i] = new Rational(vel.Next(1,15));
             }
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    matrix[i,j] = new Rational(vel.Next(10));
+                    matrix[i,j] = new Rational(vel.Next(1,10));
                 }
             }
 
