@@ -46,7 +46,13 @@ namespace NumModszerek.Gauss
         }
         public void solve()
         {
-            
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = i+1; j < n; j++)
+                {
+                    rowSubstraction(j,i,matrix[i,j] / matrix[i,i]);
+                }
+            }
         }
         private void rowSubstraction(int a, int b, Rational gaussHanyados)
         {
@@ -54,6 +60,7 @@ namespace NumModszerek.Gauss
             {
                 matrix[a, i] = matrix[a, i] - matrix[b, i] * gaussHanyados;
             }
+            bVector[a] = bVector[a] - bVector[b] * gaussHanyados;
         }
     }
 }
