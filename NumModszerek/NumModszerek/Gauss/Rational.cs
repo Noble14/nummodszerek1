@@ -58,6 +58,11 @@ namespace NumModszerek.Gauss
         }
         public static Rational operator /(Rational a, Rational b)
         {
+            if (b.nominator == 0)
+            {
+                Exception e = new Exception("Baj van");
+                throw e;
+            }
             return new Rational(a.nominator * b.denominator, a.denominator * b.nominator);
         }
 
