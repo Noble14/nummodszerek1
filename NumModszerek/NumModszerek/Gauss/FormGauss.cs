@@ -31,6 +31,7 @@ namespace NumModszerek.Gauss
                 n = 3;
             }
             GaussModell model = new GaussModell(n);
+            model.solve();
             foreach (var item in model.resultVector)
             {
                 Console.WriteLine(item.ToString());
@@ -51,11 +52,9 @@ namespace NumModszerek.Gauss
                     else
                     {
                         b.Text = model.bVector[i].ToString();
-                    }
-                    
+                    }                    
                     panel1.Controls.Add(b);
-                }
-                
+                }                
             }
         }
     }

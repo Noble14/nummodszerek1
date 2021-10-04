@@ -46,14 +46,22 @@ namespace NumModszerek.Gauss
         }
         public void solve()
         {
-            for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
             {
-                for (int j = i+1; j < n; j++)
+                for (int i = j+1; i < n; i++)
                 {
-                    rowSubstraction(j,i,matrix[i,j] / matrix[i,i]);
+                    rowSubstraction(i,j,matrix[i,j] / matrix[j,j]);
                 }
             }
         }
+        //summary
+        /// <summary>
+        /// Kivon két megfelelő sort egymásból
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="gaussHanyados"></param>
+        //summary
         private void rowSubstraction(int a, int b, Rational gaussHanyados)
         {
             for (int i = 0; i < n; i++)

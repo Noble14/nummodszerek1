@@ -11,9 +11,17 @@ namespace NumModszerek.Gauss
 
         public Rational(int a, int b)
         {
-            int m = lnko(a, b);
-            this.denominator = b / m;
-            this.nominator = a / m;
+            if( a == 0)
+            {
+                this.denominator = 1;
+                this.nominator = 0;
+            }
+            else
+            {
+                int m = lnko(a, b);
+                this.denominator = b / m;
+                this.nominator = a / m;
+            }
         }
 
         public Rational(int a)
