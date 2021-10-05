@@ -6,6 +6,7 @@ namespace NumModszerek.Gauss
 {
     class GaussModell
     {
+        private int step = 0;
         public Rational[,] matrix { get; private set; }
         public Rational[] bVector { get; private set; }
         public Rational[] resultVector { get; private set; }
@@ -69,6 +70,14 @@ namespace NumModszerek.Gauss
                 matrix[a, i] = matrix[a, i] - matrix[b, i] * gaussHanyados;
             }
             bVector[a] = bVector[a] - bVector[b] * gaussHanyados;
+        }
+        public void next()
+        {
+            for (int i = step + 1; i < n; i++)
+            {
+                rowSubstraction(i, step, matrix[i, step] / matrix[step, step]);
+            }
+            step++;
         }
     }
 }
