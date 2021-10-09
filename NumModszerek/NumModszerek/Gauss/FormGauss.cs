@@ -31,6 +31,7 @@ namespace NumModszerek.Gauss
                 n = 3;
             }
             GaussModell model = new GaussModell(n);
+            
             model.solve();
             foreach (var item in model.resultVector)
             {
