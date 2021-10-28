@@ -6,14 +6,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NumModszerek.Gauss;
 using System.Windows.Forms;
+using NumModszerek.Tasks.Gauss.View;
 
-namespace NumModszerek
+namespace NumModszerek.View
 {
-    public partial class MainMenu : Form
+    public partial class MainMenuForm : Form
     {
-        public MainMenu()
+
+        #region Constructor
+        public MainMenuForm()
         {
             InitializeComponent();
 
@@ -22,10 +24,11 @@ namespace NumModszerek
 
             button2.MouseDown += startGaussForm;
         }
+        #endregion
 
         private void startGaussForm(object sender, EventArgs e)
         {
-            FormGauss f = new FormGauss();
+            GaussForm f = new GaussForm();
             f.Show();
         }
     }

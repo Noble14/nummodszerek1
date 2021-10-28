@@ -1,7 +1,7 @@
 ﻿
-namespace NumModszerek.Gauss
+namespace NumModszerek.Tasks.Gauss.View
 {
-    partial class FormGauss
+    partial class GaussForm
     {
         /// <summary>
         /// Required designer variable.

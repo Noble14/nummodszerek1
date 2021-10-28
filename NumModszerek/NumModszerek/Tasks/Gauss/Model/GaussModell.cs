@@ -2,16 +2,23 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NumModszerek.Gauss
+namespace NumModszerek.Tasks.Gauss.Model
 {
     class GaussModell
     {
-        private int step = 0;
+        #region Properties
         public Rational[,] matrix { get; private set; }
         public Rational[] bVector { get; private set; }
         public Rational[] resultVector { get; private set; }
+        #endregion
+
+        #region Fields
+        private int step = 0;
         private int n;
         private Random vel = new Random();
+        #endregion
+
+        #region Constructor
         public GaussModell(int n)
         {
             this.n = n;
@@ -19,19 +26,22 @@ namespace NumModszerek.Gauss
             bVector = new Rational[n];
             resultVector = new Rational[n];
             generateRandomMatrix();
-            
+
         }
+        #endregion
+
+        #region private methods
         private void generateRandomMatrix()
         {
             for (int i = 0; i < resultVector.Length; i++)
             {
-                resultVector[i] = new Rational(vel.Next(1,15));
+                resultVector[i] = new Rational(vel.Next(1, 15));
             }
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    matrix[i,j] = new Rational(vel.Next(1,10));
+                    matrix[i, j] = new Rational(vel.Next(1, 10));
                 }
             }
 
@@ -43,16 +53,6 @@ namespace NumModszerek.Gauss
                     s = s + matrix[i, j].nominator * resultVector[j].nominator;
                 }
                 bVector[i] = new Rational(s);
-            }
-        }
-        public void solve()
-        {
-            for (int j = 0; j < n; j++)
-            {
-                for (int i = j+1; i < n; i++)
-                {
-                    rowSubstraction(i,j,matrix[i,j] / matrix[j,j]);
-                }
             }
         }
         
@@ -70,6 +70,19 @@ namespace NumModszerek.Gauss
             }
             bVector[a] = bVector[a] - bVector[b] * gaussHanyados;
         }
+        #endregion
+
+        #region Public methods
+        public void solve()
+        {
+            for (int j = 0; j < n; j++)
+            {
+                for (int i = j + 1; i < n; i++)
+                {
+                    rowSubstraction(i, j, matrix[i, j] / matrix[j, j]);
+                }
+            }
+        }
         public void next()
         {
             for (int i = step + 1; i < n; i++)
@@ -79,7 +92,10 @@ namespace NumModszerek.Gauss
             step++;
             ModelHasChanged?.Invoke(this, new EventArgs());
         }
+        #endregion
 
+        #region Events
         public event EventHandler<EventArgs> ModelHasChanged;
+        #endregion
     }
 }

@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NumModszerek.Gauss
+namespace NumModszerek.Tasks.Gauss.Model
 {
     public class Rational
     {
+        #region Properties
         public int denominator { get; set; }
         public int nominator { get; set; }
+        #endregion
 
+        #region Constructors
         public Rational(int a, int b)
         {
-            if( a == 0)
+            if (a == 0)
             {
                 this.denominator = 1;
                 this.nominator = 0;
@@ -35,7 +38,9 @@ namespace NumModszerek.Gauss
             denominator = 1;
             nominator = 0;
         }
+        #endregion
 
+        #region Operators
         public static Rational operator +(Rational a, Rational b)
         {
             int nevezo = lkkt(a.denominator, b.denominator);
@@ -65,16 +70,9 @@ namespace NumModszerek.Gauss
             }
             return new Rational(a.nominator * b.denominator, a.denominator * b.nominator);
         }
+        #endregion
 
-        public override string ToString()
-        {
-            if (denominator == 1)
-            {
-                return nominator.ToString();
-            }
-            return $"{nominator}/{denominator}";
-        }
-
+        #region Static methods
         public static int lkkt(int a, int b)
         {
             return a * b / lnko(a, b);
@@ -96,6 +94,14 @@ namespace NumModszerek.Gauss
                 b = m;
             }
             return a;
+        }
+        #endregion
+
+        public override string ToString()
+        {
+            if (denominator == 1)
+                return nominator.ToString();
+            return $"{nominator}/{denominator}";
         }
     }
 }

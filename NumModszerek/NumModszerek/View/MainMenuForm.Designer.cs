@@ -1,7 +1,7 @@
 ﻿
-namespace NumModszerek
+namespace NumModszerek.View
 {
-    partial class MainMenu
+    partial class MainMenuForm
     {
         /// <summary>
         ///  Required designer variable.

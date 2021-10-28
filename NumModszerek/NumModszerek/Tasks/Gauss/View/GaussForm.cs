@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NumModszerek.Tasks.Gauss.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,20 +7,21 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace NumModszerek.Gauss
+namespace NumModszerek.Tasks.Gauss.View
 {
-    public partial class FormGauss : Form
+    public partial class GaussForm : Form
     {
-        public FormGauss()
+        #region Constructor
+        public GaussForm()
         {
             InitializeComponent();
-            buttonGenerate.MouseDown += generateMatrix;
-            
+            buttonGenerate.MouseDown += generateMatrix;            
         }
+        #endregion
+
 
         private void generateMatrix(object sender, EventArgs e)
         {
-
             panel1.Controls.Clear();
             int n;
             try
