@@ -55,14 +55,13 @@ namespace NumModszerek.Gauss
                 }
             }
         }
-        //summary
+        
         /// <summary>
         /// Kivon két megfelelő sort egymásból
         /// </summary>
         /// <param name="a">Ebből vonok ki</param>
         /// <param name="b">Ezt a sort vonom ki</param>
-        /// <param name="gaussHanyados"></param>
-        //summary
+        /// <param name="gaussHanyados"></param>        
         private void rowSubstraction(int a, int b, Rational gaussHanyados)
         {
             for (int i = 0; i < n; i++)
@@ -78,6 +77,7 @@ namespace NumModszerek.Gauss
                 rowSubstraction(i, step, matrix[i, step] / matrix[step, step]);
             }
             step++;
+            ModelHasChanged?.Invoke(this, new EventArgs());
         }
 
         public event EventHandler<EventArgs> ModelHasChanged;
