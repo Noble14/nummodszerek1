@@ -11,6 +11,10 @@ namespace NumModszerek.Tasks.Gauss.View
 {
     public partial class GaussForm : Form
     {
+        #region Fields
+        GaussModell _model;
+        #endregion
+
         #region Constructor
         public GaussForm()
         {

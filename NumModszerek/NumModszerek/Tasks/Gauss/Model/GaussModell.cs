@@ -18,7 +18,7 @@ namespace NumModszerek.Tasks.Gauss.Model
         private Random vel = new Random();
         #endregion
 
-        #region Constructor
+        #region Constructors
         public GaussModell(int n)
         {
             this.n = n;
